@@ -1,0 +1,25 @@
+class Solution {
+    //Function to find the height of a binary tree.
+    int height(Node node) 
+    {
+        // code here 
+        int height=0;
+Queue<Node> queue = new LinkedList<>();
+queue.add(node);
+while(!queue.isEmpty())
+{
+    int n=queue.size();
+    for(int i=1;i<=n;i++)
+    {
+        Node temp=queue.poll();
+        if(i==1) height++;
+        if(temp.left!=null) queue.add(temp.left);
+        if(temp.right!=null) queue.add(temp.right);
+    }
+}
+return height;
+        
+        
+        
+    }
+}
