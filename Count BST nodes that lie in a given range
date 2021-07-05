@@ -1,0 +1,25 @@
+class Tree
+{
+    
+    
+    
+    //Function to count number of nodes in BST that lie in the given range.
+    int getCount(Node root,int l, int h)
+    {
+        //Your code here
+        Node node=root;
+        if(node==null)
+        return 0;
+        
+        if(node.data>=l && node.data<=h )
+        {
+            return 1 + getCount(node.left,l,h)+getCount(node.right,l,h);
+        }
+        else if(node.data< l)
+        {
+            return getCount(node.right,l,h);
+        }
+        else
+        return getCount(node.left,l,h);
+    }
+}
