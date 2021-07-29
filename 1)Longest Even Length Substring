@@ -1,0 +1,47 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+		Scanner scan = new Scanner(System.in);
+		int t=scan.nextInt();
+		for(int m=0;m<t;m++)
+		{
+		    String str= scan.next();
+		    
+		    int n=str.length();
+		    int sum[][] = new int[n][n];
+		    int maxlen=0;
+		    
+		    for(int i=0;i<n;i++)
+		    {
+		        sum[i][i]=str.charAt(i)- '0';
+		    }
+		    int len;
+		    for(len=2;len<=n;len++)
+		    {
+		        for(int i=0;i<n-len+1;i++)
+		        {
+		            int j=i + len - 1;
+		            int k= len/2;
+		            
+		            sum[i][j]= sum[i][j-k] + sum[j-k+1][j];
+		            
+		            if(len%2==0 && sum[i][j-k]== sum[j-k+1][j] && len > maxlen)
+		            {
+		                maxlen=len;
+		            }
+		        }
+		    }
+		    System.out.println(maxlen);
+		    
+		    
+		    
+		    
+		}
+	}
+}
