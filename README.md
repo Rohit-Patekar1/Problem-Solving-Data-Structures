@@ -19,3 +19,20 @@ Arr[] = {1, 3, 3}
 Output: 3 2
 Explanation: Repeating number is 3 and 
 smallest positive missing number is 2.
+
+
+
+3) Next greater element in an array
+Example
+
+arr[]= {112, 133, 161, 311, 122, 
+                    512, 1212, 0, 19212}
+nextgreater(112) : 133
+nextgreater(133) : 161
+nextgreater(161) : 311
+nextgreater(311) : 512
+nextgreater(122) : 512
+nextgreater(512) : 1212
+nextgreater(1212) : 19212
+nextgreater(0) : 19212
+nextgreater(19212) : 0
