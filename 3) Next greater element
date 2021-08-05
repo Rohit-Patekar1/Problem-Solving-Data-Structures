@@ -1,0 +1,30 @@
+
+class Complete{
+    
+   
+    // Function for finding maximum and value pair
+    public static int save_gotham (int arr[], int n) {
+        //Complete the function
+         Stack<Integer> s = new Stack<>();
+        // int k=4;
+        // int arr[]={8,5,10,7,9,4,15,12,90,13};
+        int great[] = new int[arr.length];
+        for(int i=arr.length-1;i>=0;i--)
+        {
+            if(!s.isEmpty())
+            {
+                while (!s.isEmpty() && arr[i]>=s.peek())
+                {
+                    s.pop();
+                }
+            }
+            great[i]=s.isEmpty()?0:s.peek();
+            s.push(arr[i]);
+        }
+       
+       return great;
+
+    }
+    
+    
+}
